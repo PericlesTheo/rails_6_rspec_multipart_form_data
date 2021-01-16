@@ -3,6 +3,6 @@ class SendgridEmailsController < ApplicationController
     puts "---CONTENT-TYPE---"
     puts request.env["CONTENT_TYPE"]
     puts "------------------"
-    render json: params.except(:controller, :action).to_json, status: :ok
+    render json: params.except(:controller, :action), status: :ok
   end
 end
