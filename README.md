@@ -7,3 +7,15 @@ It seems that rails receives the right `Content-Type` but the parsing fails. I'v
 post "/sendgrid_emails", params: incoming_email_body, headers: {"Content-Type" => "multipart/form-data"}
 ```
 and the params do include the text but they are not parsed correctly at all. So I don't know if this has something to do with the boundary.
+
+The only relevant files here are `app/controllers/sendgrid_emails_controller.rb`, `spec/requests/sendgrid_emails_spec.rb` and `spec/fixtures/sendgrid_email_example.txt`. The `txt` file is the same as the one used by sendgrid in their example.
+
+To run the project, make sure you have Ruby 3. Then
+```
+bundle
+```
+
+To run the tests
+```
+bundle exec rspec spec
+```
